@@ -1,0 +1,25 @@
+# Copy vào ~/.omp/agent/models.yml trên máy chạy omp.
+# Dựa trên https://api-docs.deepseek.com/quick_start/agent_integrations/oh_my_pi
+# Tắt thinking để tránh lỗi 400 khi chạy dài có tool call (known issue của DeepSeek).
+# Kiểm tra id model thật bằng: curl -H "Authorization: Bearer $DEEPSEEK_API_KEY" https://api.deepseek.com/models
+providers:
+  deepseek:
+    baseUrl: https://api.deepseek.com
+    api: openai-completions
+    apiKey: DEEPSEEK_API_KEY
+    authHeader: true
+    models:
+      - id: deepseek-v4.1-flash
+        name: DeepSeek V4.1 Flash
+        reasoning: false
+        input: [text, image]
+        contextWindow: 1000000
+        maxTokens: 384000
+        compat:
+          supportsDeveloperRole: false
+          maxTokensField: max_tokens
+          supportsToolChoice: false
+          requiresAssistantContentForToolCalls: true
+          extraBody:
+            thinking:
+              type: disabled
