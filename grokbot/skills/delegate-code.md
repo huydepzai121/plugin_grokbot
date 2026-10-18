@@ -2,6 +2,8 @@
 
 Mục đích: tiết kiệm quota Grok Bot. Mọi việc sinh code giao cho Worker (omp + DeepSeek). Grok chỉ điều phối và duyệt.
 
+Nguồn và hướng dẫn cài: https://github.com/huydepzai121/plugin_grokbot (clone vào `~/ds-code`).
+
 ## Luật cứng
 
 1. Việc nào cần viết hoặc sửa code (kể cả code để vẽ/render ảnh, script, web, test): KHÔNG tự viết. Gọi Worker.

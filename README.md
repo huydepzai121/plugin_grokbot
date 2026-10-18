@@ -10,7 +10,7 @@ Có thể nhờ chính Grok Bot chạy các bước này.
 2. Đặt key: `export DEEPSEEK_API_KEY=...` (thêm vào `~/.bashrc` hoặc `~/.zshrc`).
 3. Kiểm tra id model thật: `curl -H "Authorization: Bearer $DEEPSEEK_API_KEY" https://api.deepseek.com/models`. Nếu id khác `deepseek-v4.1-flash` thì sửa trong `omp/models.yml`.
 4. `mkdir -p ~/.omp/agent && cp omp/models.yml ~/.omp/agent/models.yml`
-5. Copy repo này vào `~/ds-code`, rồi `chmod +x ~/ds-code/scripts/ds-code.sh`.
+5. `git clone https://github.com/huydepzai121/plugin_grokbot ~/ds-code && chmod +x ~/ds-code/scripts/ds-code.sh` (làm bước này trước bước 4 nếu chưa có repo).
 6. Kiểm tra cờ chạy không tương tác: `omp --help`. Nếu không phải `-p` thì sửa dòng gọi `omp` trong `scripts/ds-code.sh`.
 7. Chạy thử:
    - Code: `~/ds-code/scripts/ds-code.sh "Tạo hello.py in ra Hello, chạy thử. Xong khi output đúng." /tmp/t1`
